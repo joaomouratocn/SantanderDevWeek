@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity"
+    style="@style/containerColor">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            app:navigationIcon="@drawable/ic_baseline_menu_24"
+            app:menu="@menu/main_menu"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_banco_santander_logotipo"
+                android:contentDescription="@string/str_logo"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/img_complement"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@string/str_image_complement"
+        app:layout_constraintDimensionRatio="16:7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"/>
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnPrimary"
+        android:elevation="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        tools:text="Olá, João Mourato"/>
+
+    <TextView
+        android:id="@+id/tv_agency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnPrimary"
+        android:elevation="4dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/tv_user_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+        tools:text="AG: 1234"/>
+
+    <TextView
+        android:id="@+id/tv_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="?attr/colorOnPrimary"
+        android:elevation="4dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@id/tv_agency"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+        tools:text="CC: 56789-0"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="@id/tv_user_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_agency">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/img_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/str_update_image"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_baseline_update_24"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/img_expand"
+                android:layout_marginStart="8dp"
+                android:text="@string/str_balance_available"
+                android:layout_toEndOf="@id/img_update"
+                android:layout_alignTop="@id/img_update"
+                android:layout_alignBottom="@id/img_update"/>
+
+            <ImageView
+                android:id="@+id/img_expand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:layout_alignTop="@id/img_update"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="@string/str_expand_saldo" />
+
+            <LinearLayout
+                android:id="@+id/lay_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:layout_below="@id/img_update"
+                android:layout_alignStart="@id/img_update">
+                <TextView
+                    android:id="@+id/tv_balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="R$ 1.250,00"
+                    style="@style/TextAppearance.AppCompat.Title"/>
+
+                <TextView
+                    android:id="@+id/tv_balance_limit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textSize="12sp"
+                    tools:text="Saldo + Limite 3.250,00"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/darker_gray"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/str_see_extract"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/lay_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/card_balance"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_baseline_credit_card_24"
+            android:text="@string/str_pay"
+            style="@style/button_style"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:drawableTop="@drawable/ic_payments_black_24dp"
+            android:text="@string/str_pay"
+            style="@style/button_style"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_baseline_phone_android_24"
+            android:text="@string/str_pay"
+            style="@style/button_style"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_select_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/str_select_card"
+        app:layout_constraintTop_toBottomOf="@id/lay_buttons"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Spinner
+        android:id="@+id/spn_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:popupBackground="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="@id/card_balance"
+        app:layout_constraintEnd_toEndOf="@id/card_balance"
+        app:layout_constraintTop_toBottomOf="@id/txt_select_card"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SantanderDevWeek</string>
+    <string name="str_notifications">Notificações</string>
+    <string name="str_user_name">Ola, %s</string>
+    <string name="str_agency">AG: %s</string>
+    <string name="str_account">CC: %s</string>
+    <string name="str_image_complement">Imagem complementar</string>
+    <string name="str_logo">Imagem logo</string>
+    <string name="str_balance_available">Saldo disponível</string>
+    <string name="str_balance_account">R$: %.2f</string>
+    <string name="str_balance_limit">Saldo + Limite R$ %.2f</string>
+    <string name="str_see_extract">Ver extrato</string>
+    <string name="str_update_image">Imagem update</string>
+    <string name="str_expand_saldo">Imagem expandir saldo</string>
+    <string name="str_select_card">Selcione o cartão:</string>
+    <string name="str_pay">Pagar</string>
+</resources>

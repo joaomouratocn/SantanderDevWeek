@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#d50000</color>
+    <color name="primaryDarkColor">#9b0000</color>
+    <color name="secondaryColor">#b71c1c</color>
+    <color name="secondaryDarkColor">#7f0000</color>
+    <color name="textColor">#ffffff</color>
+
+    <!--Cor de fundo botões-->
+    <color name="bgButtonColor">#ffffffff</color>
+    <color name="bgButtonColorNigth">#ff424242</color>
+
+    <!--Cor de fundo container pricinpal-->
+    <color name="colorbgNight">#ff212121</color>
+</resources>
